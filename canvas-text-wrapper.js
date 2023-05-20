@@ -46,10 +46,10 @@
       var canvasHeight = canvas.height;
       scale = devicePixelRatio;
 
-      canvas.width = canvasWidth * scale;
-      canvas.height = canvasHeight * scale;
-      canvas.style.width = canvasWidth * scale * 0.5 + 'px';
-      canvas.style.height = canvasHeight * scale * 0.5 + 'px';
+      context.canvas.width = canvasWidth * scale;
+      context.canvas.height = canvasHeight * scale;
+      context.canvas.style.width = canvasWidth * scale * 0.5 + 'px';
+      context.canvas.style.height = canvasHeight * scale * 0.5 + 'px';
 
       // restore context settings
       for (var key in tempCtx) {
