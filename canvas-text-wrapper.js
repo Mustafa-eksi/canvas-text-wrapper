@@ -56,7 +56,7 @@
         try {
           context[key] = tempCtx[key];
         } catch (e) {
-
+          console.error(e);
         }
       }
 
