@@ -34,34 +34,30 @@
     var scale = 1;
     var devicePixelRatio = (typeof global !== 'undefined') ? global.devicePixelRatio : root.devicePixelRatio;
 
-    if (opts.renderHDPI && devicePixelRatio > 1) {
-      var tempCtx = {};
+    // if (opts.renderHDPI && devicePixelRatio > 1) {
+    //   var tempCtx = {};
 
-      // store context settings in a temp object before scaling otherwise they will be lost
-      for (var key in context) {
-        tempCtx[key] = context[key];
-      }
+    //   // store context settings in a temp object before scaling otherwise they will be lost
+    //   for (var key in context) {
+    //     tempCtx[key] = context[key];
+    //   }
 
-      var canvasWidth = canvas.width;
-      var canvasHeight = canvas.height;
-      scale = devicePixelRatio;
+    //   var canvasWidth = canvas.width;
+    //   var canvasHeight = canvas.height;
+    //   scale = devicePixelRatio;
 
-      context.canvas.width = canvasWidth * scale;
-      context.canvas.height = canvasHeight * scale;
-      context.canvas.style.width = canvasWidth * scale * 0.5 + 'px';
-      context.canvas.style.height = canvasHeight * scale * 0.5 + 'px';
+    //   context.canvas.width = canvasWidth * scale;
+    //   context.canvas.height = canvasHeight * scale;
+    //   context.canvas.style.width = canvasWidth * scale * 0.5 + 'px';
+    //   context.canvas.style.height = canvasHeight * scale * 0.5 + 'px';
 
-      // restore context settings
-      for (var key in tempCtx) {
-        try {
-          context[key] = tempCtx[key];
-        } catch (e) {
-          console.error(e);
-        }
-      }
+    //   // restore context settings
+    //   for (var key in tempCtx) {
+    //       context[key] = tempCtx[key];
+    //   }
 
-      context.scale(scale, scale);
-    }
+    //   context.scale(scale, scale);
+    // }
 
     var EL_WIDTH = (!opts.fitParent ? canvas.width : canvas.parentNode.clientWidth) / scale;
     var EL_HEIGHT = (!opts.fitParent ? canvas.height : canvas.parentNode.clientHeight) / scale;
